@@ -1,0 +1,57 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "IJulia 1.9.3",
+      "language": "julia",
+      "name": "ijulia-1.9"
+    },
+    "language_info": {
+      "file_extension": ".jl",
+      "name": "julia",
+      "version": "1.9.3"
+    },
+    "engee": {}
+  },
+  "cells": [
+    {
+      "id": "57fa4ab2",
+      "cell_type": "markdown",
+      "source": [
+        "# 结论\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f60423c0",
+      "cell_type": "markdown",
+      "source": [
+        "恭喜！您已完成课程**数字信号处理系统仿真**。在本课程中，您学习了如何构建最简单的数字信号处理系统的动态模型。您已经学会了生成各种类型的离散信号并对其进行频谱分析，建模模数转换器，使用两者基本和专用模块设计与实现滤波器，使用**Filter Designer**应用程序，以及建模多速率系统。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    }
+  ]
+}

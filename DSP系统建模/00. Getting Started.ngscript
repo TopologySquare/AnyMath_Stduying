@@ -1,0 +1,57 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "name": "ijulia-1.9",
+      "display_name": "IJulia 1.9.3",
+      "language": "julia"
+    },
+    "language_info": {
+      "name": "julia",
+      "file_extension": ".jl",
+      "version": "1.9.3"
+    },
+    "engee": {}
+  },
+  "cells": [
+    {
+      "id": "a5bc9886",
+      "cell_type": "markdown",
+      "source": [
+        "# 入门指南\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "52637bb7",
+      "cell_type": "markdown",
+      "source": [
+        "在课程**《数字信号处理系统仿真》**中，您将学习如何在**AnyMath**中创建简单数字信号处理系统的动态模型。您将学习如何生成各种类型的离散信号并对其进行频谱分析，建模模数转换器，利用两者基本和专用模块设计并实现滤波器，使用**Filter Designer**应用程序，以及建模多速率系统。\n\n本课程共分为六个部分：\n\n1. 信号生成与频谱分析\n2. 离散动态系统的仿真\n3. 信号滤波\n4. 模拟转换\n5. 多速率系统的仿真\n6. 总结\n\n第1–5部分包含理论内容和自学任务。\n\n在开始本课程之前，建议您先学习以下课程：**《欢迎使用AnyMath》**、《**可视化仿真》**以及**《数字信号处理基础》**。\n\n本课程预计需要2.5小时完成。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    }
+  ]
+}
