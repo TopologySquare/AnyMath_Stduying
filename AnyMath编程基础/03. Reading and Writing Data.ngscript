@@ -1,0 +1,2762 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "IJulia 1.9.3",
+      "language": "julia",
+      "name": "ijulia-1.9"
+    },
+    "language_info": {
+      "file_extension": ".jl",
+      "name": "julia",
+      "version": "1.9.3"
+    },
+    "engee": {}
+  },
+  "cells": [
+    {
+      "id": "3c7217bb",
+      "cell_type": "markdown",
+      "source": [
+        "# Reading and writing data\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "97371cdf",
+      "cell_type": "markdown",
+      "source": [
+        "## Displaying data on screen\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "081cbbbe",
+      "cell_type": "markdown",
+      "source": [
+        "The simplest way to display the value of a variable or a mathematical expression on the screen is to write the name of the variable or the expression **without a semicolon** after it."
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "3841649e",
+      "cell_type": "markdown",
+      "source": [
+        "Example. If the variable `x` is assigned the value `1`, then after executing the following line of code, the value of the variable `x` will be displayed on the screen:"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "1e0ead63",
+      "cell_type": "code",
+      "source": [
+        "x = 1"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "61b581ef",
+      "cell_type": "markdown",
+      "source": [
+        "As the variable `x` has already been defined, simply writing the name of this variable will give you its value:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "3016067f",
+      "cell_type": "code",
+      "source": [
+        "x"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "8048c187",
+      "cell_type": "markdown",
+      "source": [
+        "In exactly the same way, the results of mathematical operations are displayed on the screen:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a5b51964",
+      "cell_type": "code",
+      "source": [
+        "2 + 3"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "6181b27f",
+      "cell_type": "code",
+      "source": [
+        "2 > 1"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c8b6d2a2",
+      "cell_type": "markdown",
+      "source": [
+        "If you place a **semicolon** after an expression, the display of that expression value will be suppressed:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "92ed223f",
+      "cell_type": "code",
+      "source": [
+        "x = 2;"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "9ec9312b",
+      "cell_type": "code",
+      "source": [
+        "4*5;"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1814ecfa",
+      "cell_type": "markdown",
+      "source": [
+        "If a code cell contains several expressions, then after this cell has been executed, only the result of the **last expression** will be displayed on the screen. \n\nFor example, after executing the following cell, only the value of the variable `t` will be displayed:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a9e516ad",
+      "cell_type": "code",
+      "source": [
+        "x = 1\r\ny = 2\r\nz = 3; t = 4"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "fe847d8c",
+      "cell_type": "markdown",
+      "source": [
+        "If you need to display data on the screen at any point within a code cell, you can do so using the following functions:\n\n* `print` – displays the values of variables, constants, mathematical or logical expressions on the screen. If you need to display multiple values (`x, y, z`), they are listed separated by commas: `print(x, y, z)`;\n* `println` – the same as `print`, but with a line break, i.e. the next output will appear on a new line;\n* `display` – the same as `print`, but this function can only take a single argument (a constant, a variable or an expression).\n* `show` – the same as `display`.\n\nBelow are a few examples of how to use the `print` function:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "36e275ed",
+      "cell_type": "code",
+      "source": [
+        "print(2*3+5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c7850410",
+      "cell_type": "code",
+      "source": [
+        "print(true)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "19ebd5f2",
+      "cell_type": "code",
+      "source": [
+        "print('A')"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "e32b2b42",
+      "cell_type": "code",
+      "source": [
+        "X = 10\r\nprint(\"X = \", X)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "f35d07ab",
+      "cell_type": "code",
+      "source": [
+        "X = [11 12 13]\r\nprint(\"X = \", X)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b6248c87",
+      "cell_type": "code",
+      "source": [
+        "print(1>2)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "27c1fee2",
+      "cell_type": "markdown",
+      "source": [
+        "Using the `println` function does not differ form using the `print` function.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "63ced599",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 1\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "420a1624",
+      "cell_type": "markdown",
+      "source": [
+        "Set the value of the variable `x` to `5`. Then calculate the values of the variables `y` and `z` using the following formulas: $y=(2x+1)/7$ and $z=\\sin(y)$. After that, display the values of all three variables `x`, `y` and `z` on the screen using the `println` function.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6ce823fa",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "86b80902",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Hint</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "33164ec5",
+      "cell_type": "markdown",
+      "source": [
+        "To ensure that the meaning of each value is clear when printing the values of miltiple variables to the screen, we recommend calling the `println` function with two arguments: the first argument is a string constant containing the variable name followed by an equals sign, and the second argument is the variable itself. For example: `println(\"x = \", x)`.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "9905eb57",
+      "cell_type": "markdown",
+      "source": [
+        "##### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 1,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5479e52e",
+      "cell_type": "code",
+      "source": [
+        "x = 5\r\ny = (2x + 1)/7\r\nz = sin(y)\r\nprintln(\"x = \", x)\r\nprintln(\"y = \", y)\r\nprintln(\"z = \", z)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "7dfef44a",
+      "cell_type": "markdown",
+      "source": [
+        "###\r\n\r\nBelow are several examples of using the `display` function:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "63ea6a80",
+      "cell_type": "code",
+      "source": [
+        "display(\"Hello, world!\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5f6f794e",
+      "cell_type": "code",
+      "source": [
+        "display(22/7)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ab3aa141",
+      "cell_type": "code",
+      "source": [
+        "X = 10\r\ndisplay(X)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "440ced46",
+      "cell_type": "markdown",
+      "source": [
+        "Several examples of using the `show` function:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "e964f507",
+      "cell_type": "code",
+      "source": [
+        "show(\"This is my text\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1bd9436a",
+      "cell_type": "code",
+      "source": [
+        "show(13/17)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "e5639d5b",
+      "cell_type": "code",
+      "source": [
+        "a = 3.5\r\nshow(a)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c6449f06",
+      "cell_type": "markdown",
+      "source": [
+        "The `summary` function returns the type of a variable. For arrays, their size is also returned.\n\nExample. Let’s display information about the matrix `x`:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "64725a54",
+      "cell_type": "code",
+      "source": [
+        "x = [1 2 3; 4 5 6]\r\nsummary(x)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "a31e190a",
+      "cell_type": "markdown",
+      "source": [
+        "## Formatted output\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "31afe9e6",
+      "cell_type": "markdown",
+      "source": [
+        "You can control the precision of variable display using the `@printf` function. This function will be available if you include the `Printf` package.\n\nExample. Let’s display the value of the variable `x = 12.67835675` to $4$ decimal places:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "2eb9c8d6",
+      "cell_type": "code",
+      "source": [
+        "using Printf\r\nx = 12.67835675\r\n@printf(\"%.4f\", x)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4ea16d48",
+      "cell_type": "markdown",
+      "source": [
+        "The expression in quotation marks `\"%.4f\"` specifies the format for outputting the variable: `.4` denotes the number of decimal places, whilst the letter `f` specifies the data type of the variable `x`. In this case, `f` denotes the real data type; other options include `i` (integer data type), `e` (exponential notation), `s` (string data type), and so on. The second argument of the `@printf` function is the name of the variable `x`, the value of which is to be displayed on screen. You can find full information on the output format using the `@printf` function in the [documentation](https://en.cppreference.com/w/c/io/fprintf).\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "7680b842",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 2\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "744fac6f",
+      "cell_type": "markdown",
+      "source": [
+        "Print the value of the variable `x = pi^3` to $6$ decimal places.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "9c27086e",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "6ceac51c",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 1,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4d6eb4b9",
+      "cell_type": "code",
+      "source": [
+        "using Printf\r\nx = pi^3\r\n@printf(\"%.6f\", x)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "7c1bf30d",
+      "cell_type": "markdown",
+      "source": [
+        "## Input from the keyboard\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "79e3c3a7",
+      "cell_type": "markdown",
+      "source": [
+        "You can read input from the keyboard using the `readline()` function. Let’s consider two cases:\n\n1.   If you need to input a variable `x` of a string type, use the following command: \n\n```\nx = readline()\n```\n\n2. If you need to input a variable of a numeric type (integer, real or boolean), use the following syntax: \n\n```\nx = parse(Type, readline())\n``` \n\nThe `readline` function is designed to read only string-type data. To convert the input variable to a numeric data type, use the `parse` function. Its first argument, `Type`, specifies the type of the variable (`Int`, `Float64`, `Float32`, `Bool`, etc.) to which the string variable specified by the second argument of `readline()` should be converted.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4ce3d428",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 3\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d59d1ed2",
+      "cell_type": "markdown",
+      "source": [
+        "Input the value of the string-type variable `x` from the keyboard. To do this, type the following command: \n```\nx = readline()\n```\n Below the cells containing your code, a field will appear for entering a value from the keyboard. Type the word `Hello` (without quotation marks!) into it and press Enter. The value you have entered for the variable `x` will be displayed on the screen.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "650c577e",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "f8240a54",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 1,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "0702df33",
+      "cell_type": "markdown",
+      "source": [
+        "```\r\nx = readline()\r\n\r\nstdin>  Hello\r\n\"Hello\"\r\n```\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "9380d42f",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 4\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "478ad415",
+      "cell_type": "markdown",
+      "source": [
+        "Enter the value of the real variable `x`, equal to `1.5`, from the keyboard. To do this, type the following command:\n```\nx = parse(Float64, readline())\n```\nThis command will prompt you to enter the value of the variable `x` from the keyboard and convert it to a real number. Then, in the field that appears, enter the number `1.5` and press the Enter key.\n\nUse the following command to square the simple variable `x`.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "49ddb34f",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "0d2574e4",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 1,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4970b569",
+      "cell_type": "markdown",
+      "source": [
+        "```\r\nx = parse(Float64, readline())\r\n\r\nstdin>  1.5\r\n1. 5\r\n\r\nx^2\r\n\r\n2. 25\r\n```\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "b394a268",
+      "cell_type": "markdown",
+      "source": [
+        "## Reading and writing files\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "7e88a975",
+      "cell_type": "markdown",
+      "source": [
+        "### Working with text files\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4b6b8e06",
+      "cell_type": "markdown",
+      "source": [
+        "The **Julia** language provides facilities for reading data from a file and writing to a file. \n\n#### Opening a file for reading\n\nTo start working with a file, you must first open it. To do this, use the function `open(filename)`, where `filename` is the name of the physical file in the local **AnyMath** environment, enclosed in double quotation marks. The result of the `open` function is assigned to a variable of type `IOStream` (input/output stream).\n\nExample. From the folder for this course, let’s open the text file `data.txt`:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "da0504d5",
+      "cell_type": "code",
+      "source": [
+        "f = open(\"data.txt\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "006c3047",
+      "cell_type": "markdown",
+      "source": [
+        "To read all lines from the **text** file, use the `readlines` function; to read a single line, use the `readline` function. The argument for these functions is a variable of type `IOStream`.\n\nExample. Let’s read all the lines from the file `data.txt` and assign them to the variable `x`:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f64ff0a6",
+      "cell_type": "code",
+      "source": [
+        "x = readlines(f)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "0f573320",
+      "cell_type": "markdown",
+      "source": [
+        "This file contains three lines. They are read into the vector `x`, which consists of elements of string type. Each element of the vector represents a separate line of the text.\n\nExample. Let’s read a single line from the file `data.txt`:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c48bd748",
+      "cell_type": "code",
+      "source": [
+        "f = open(\"data.txt\")\r\nx = readline(f)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "7447f245",
+      "cell_type": "markdown",
+      "source": [
+        "{% note info \"Note\" %}\n\nIn the examples above, the `open` function opened a file located in the current folder (the same folder as this interactive script). If you wish to open a file located in a different folder, you must specify the full path to the file, including its name, as an argument to the function. \n\n{% endnote %}\n\nFor example, you can access the same `data.txt` file using the full path:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "ebde61e1",
+      "cell_type": "code",
+      "source": [
+        "f = open(\"/user/start/Courses/Basics of programming in AnyMath/data.txt\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "56003018",
+      "cell_type": "markdown",
+      "source": [
+        "Please note that in the **AnyMath** local environment, the root folder is called `/user`, and the training courses are located in the folders `/user/start/Courses/Course Name`.\n\n**Julia** allows you to change the current directory using the `cd` command. For example:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "15c9d8d2",
+      "cell_type": "code",
+      "source": [
+        "cd(\"/user/start/Courses/Basics of programming in AnyMath\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4d3810fa",
+      "cell_type": "markdown",
+      "source": [
+        "After this, you can access files from this directory by name only, without specifying the path:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "228f8c1f",
+      "cell_type": "code",
+      "source": [
+        "f = open(\"data.txt\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "6c4bfb79",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 5\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "e2666ebf",
+      "cell_type": "markdown",
+      "source": [
+        "Open the text file `information.txt`. Use the `readline` function to read the text from this file and display it on the screen.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a0e3137a",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "760f4357",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 1,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c3071bf0",
+      "cell_type": "code",
+      "source": [
+        "f = open(\"information.txt\")\r\ns = readline(f)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "47fcbfcc",
+      "cell_type": "markdown",
+      "source": [
+        "#### Opening a file for writing\n\nTo open a file for writing data, use the `open(filename, \"w\")` function, where the second argument `w` indicates that the file is being opened in write mode. This will create a new file named `filename`.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5e8a8819",
+      "cell_type": "markdown",
+      "source": [
+        "Example. Let’s create and open the file `my_file.txt` for writing.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c5cab076",
+      "cell_type": "code",
+      "source": [
+        "f = open(\"my_file.txt\",\"w\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b65af3e7",
+      "cell_type": "markdown",
+      "source": [
+        "After executing this line of code, you will see a new file named `my_file.txt` in the file browser.\n\nThe table below lists the possible file opening modes:\n\n<div style=\"text-align: center;\">\n\n| Mode | Description | \n| - | - |\n| r | read |  \n| w | read, create, truncate |\n| a | read, create, append |\n| r+ | read, write |\n| w+ | read, write, create, truncate |\n| a+ | read, write, create, append |\n\n</div>\n\n#### Writing data to a file\n\nThe `write` function is used to write data to a file. \n\nExample. Let’s write the string `This is my text` to a file. To move to a new line, `\\n` has been added at the end of the string constant.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "cb0bff5b",
+      "cell_type": "code",
+      "source": [
+        "write(f, \"This is my text\\n\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "bc38c2af",
+      "cell_type": "markdown",
+      "source": [
+        "Let’s add a second line to the file with the text `This is another text`.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c40bffbc",
+      "cell_type": "code",
+      "source": [
+        "write(f, \"This is another text\\n\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "aabb5962",
+      "cell_type": "markdown",
+      "source": [
+        "If you need to write numerical data to a file, you must convert it to a string using the `string` function.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "7589570d",
+      "cell_type": "code",
+      "source": [
+        "write(f, string(8734.354))"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "f09e8c24",
+      "cell_type": "markdown",
+      "source": [
+        "#### Closing the file\n\nIf you view the contents of the file `my_file.txt` at this stage, you will see that the file is empty. For the data to be actually written, the file must be closed. The file is closed using the `close` function:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "42400ed4",
+      "cell_type": "code",
+      "source": [
+        "close(f)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "8444f3be",
+      "cell_type": "markdown",
+      "source": [
+        "Once this command has been executed, the file will contain three lines of data.\n\n#### Deleting a file\n\nTo delete a file, use the `rm(filename)` function.\n\nExample. Let’s delete the `my_file.txt` file we created:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "cc759ec7",
+      "cell_type": "code",
+      "source": [
+        "rm(\"my_file.txt\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "76ea91e8",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 6\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "544ceff3",
+      "cell_type": "markdown",
+      "source": [
+        "Create a file **task.txt** and write the text `I program in Julia` into it. View the file. Then delete this file using the `rm` function.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "3cd90523",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "eac627ae",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 2,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "73793e84",
+      "cell_type": "code",
+      "source": [
+        "f = open(\"task.txt\",\"w\")\r\nwrite(f, \"I program in Julia\")\r\nclose(f)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "19323521",
+      "cell_type": "code",
+      "source": [
+        "rm(\"task.txt\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c2522187",
+      "cell_type": "markdown",
+      "source": [
+        "####\n\nYou can read more about input/output functions and working with files in the [documentation](https://engee.com/helpcenter/stable/en/julia/base/io-network.html).\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f83594f9",
+      "cell_type": "markdown",
+      "source": [
+        "### Working with numerical files\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "cc4841d6",
+      "cell_type": "markdown",
+      "source": [
+        "For working with numerical data organized in tabular form, `csv` files are widely used. To access functions that allow you to work with tabular data, you need to load the `CSV` and `DataFrames` packages. The `CSV.read(filename, DataFrame)` allows you to read data from a file into a `DataFrame`-type variable.\n\nExample. Let’s read data from the file `data_table.csv`:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "fa968a4f",
+      "cell_type": "code",
+      "source": [
+        "using CSV, DataFrames\r\ndata = CSV.read(\"data_table.csv\", DataFrame)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "02384b87",
+      "cell_type": "markdown",
+      "source": [
+        "We can see that each column of the table has its own name: `Jan`, `Feb`, `Mar` and `Apr`. A column from a `DataFrame` was extracted using dot notation: `table.Variable_Name`. For example:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "74da94d2",
+      "cell_type": "code",
+      "source": [
+        "x = data.Jan"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ace7ffd0",
+      "cell_type": "code",
+      "source": [
+        "y = data.Feb"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1222a446",
+      "cell_type": "markdown",
+      "source": [
+        "If you need to retrieve not the entire column but only some of its elements, you can use the following syntax:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "fa71a3db",
+      "cell_type": "code",
+      "source": [
+        "z = data[1, \"Mar\"]"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "02abf128",
+      "cell_type": "markdown",
+      "source": [
+        "Here, the variable `z` is assigned the value of the first element in the `Mar` column of the `data` table.\n\nIf you need to retrieve several consecutive elements in a column, the first index is written as a range: `start:end`. For example, let’s assign the elements from the $2$nd to the $4$th in the `Apr` column of the `data` table to the variable `t`:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "316c28a7",
+      "cell_type": "code",
+      "source": [
+        "t = data[2:4, \"Apr\"]"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "db131ca3",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 7\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "20ee1812",
+      "cell_type": "markdown",
+      "source": [
+        "Assign the third element of the `Jan` column in the `data` table to the variable `v`, and the elements from the second to the fifth in the `Feb` column of the same table to the variable `w`.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "722ee9d5",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2ba349c8",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 2,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "ece2458d",
+      "cell_type": "code",
+      "source": [
+        "v = data[3, \"Jan\"]"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "99fe7b82",
+      "cell_type": "code",
+      "source": [
+        "w = data[2:5, \"Feb\"]"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4f0b88bd",
+      "cell_type": "markdown",
+      "source": [
+        "####\n\nYou can read more about working with data in **Julia** using the `DataFrames` package in the [documentation](https://engee.com/helpcenter/stable/en/julia/DataFrames.html).\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    }
+  ]
+}

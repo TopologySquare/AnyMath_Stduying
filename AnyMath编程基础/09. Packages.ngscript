@@ -1,0 +1,2479 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "IJulia 1.9.3",
+      "language": "julia",
+      "name": "ijulia-1.9"
+    },
+    "language_info": {
+      "file_extension": ".jl",
+      "name": "julia",
+      "version": "1.9.3"
+    },
+    "engee": {}
+  },
+  "cells": [
+    {
+      "id": "93eb5c11",
+      "cell_type": "markdown",
+      "source": [
+        "# Packages\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "54ff655a",
+      "cell_type": "markdown",
+      "source": [
+        "## Installing and loading packages\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "28c904d3",
+      "cell_type": "markdown",
+      "source": [
+        "### Introduction\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "3a2bc3cf",
+      "cell_type": "markdown",
+      "source": [
+        "**Julia packages** are an organized collections of ready-made functions, classes and objects for providing solutions to various tasks. **Julia** packages are distributed as modules, which can be installed using the `Pkg` package manager and used in your projects.\n\nIn **AnyMath**, working with **Julia** packages is also carried out via the built-in `Pkg` package manager.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "7b90f1bf",
+      "cell_type": "markdown",
+      "source": [
+        "### How to work with packages\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f4e4f54c",
+      "cell_type": "markdown",
+      "source": [
+        "Find the exact name of the package you are interested in. The **Julia** ecosystem contains over $10,000$ packages registered in the central registry, which can make finding the right package quite difficult. To optimise your search, we recommend consulting the following sources:\n\n* [Practical Applications](https://engee.com/helpcenter/stable/en/external-libs.html) is a section of the **AnyMath** documentation, which describes a large number of packages.\n* [JuliaHub](https://juliahub.com/ui/Packages) is a service for searching across all registered documentation for open-source packages, with the option to sort by tags and keywords.\n* [Julia Packages](https://juliapackages.com/) is an online resource designed for searching, exploring and viewing **Julia** packages, with the option to apply filters by category, popularity and date.\n* [Julia.jl](https://github.com/svaksha/Julia.jl) is the main package repository for the **Julia**. This repository is hosted on the **GitHub** platform and contains a wealth of useful packages and tools developed by the community for working with the **Julia**.\n\nGet started with packages in **Julia** by adding the `Pkg` package manager.\n\nAdd packages to your environment using the `add` command so that you can use them in your project.\n\nLoad a package into a namespace and access its specific elements using the `using` and `import` commands. You can also add your own packages.\n\nIf necessary, check the status of packages using `status` and remove any unwanted ones using the `remove` or `rm` commands.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "09975105",
+      "cell_type": "markdown",
+      "source": [
+        "### Working with **Julia** packages in the script editor\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "dd2505d6",
+      "cell_type": "markdown",
+      "source": [
+        "To install a new package in an **AnyMath** interactive script, run the command `Pkg.add(\"Package name\")`. For example, the section of code to add the `Example` package would look like this:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "49383a73",
+      "cell_type": "code",
+      "source": [
+        "Pkg.add(\"Example\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "943b6bc5",
+      "cell_type": "markdown",
+      "source": [
+        "Once this cell is run, the `Example` package will be installed. Information on the progress of the package installation will be displayed automatically:\n\n```julia\nResolving package versions...\nInstalled Example ─ v0.5.3\nUpdating `/user/start/Project.toml`\n[7876af07] + Example v0.5.3\nUpdating `/user/start/Manifest.toml`\n[7876af07] + Example v0.5.3\n```\n\nYou can add several packages at once by listing their names separated by commas and enclosing them in square brackets to form an array of strings, for example:\n\n```\nPkg.add([\"Example\", \"Plots\"])\n```\n\nTo remove a package, use the `rm` command:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "dde97a1c",
+      "cell_type": "code",
+      "source": [
+        "Pkg.rm(\"Example\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c22d038e",
+      "cell_type": "markdown",
+      "source": [
+        "To remove several packages at once, list their names separated by commas and enclosed in square brackets:\n\n```julia\nPkg.rm([\"Example\", \"Plots\"])\n```\n\nThe `remove` command is not defined in the script editor, although it is used in the command line. Attempting to call the `remove` command in the script editor will result in an error.\n\n{% note info \"Note\" %}\n\n**Julia** package names are case-sensitive and must begin with a capital letter; otherwise, you will receive an error message.\n\n{% endnote %}\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "9b762569",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 1\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f917da13",
+      "cell_type": "markdown",
+      "source": [
+        "In the script editor, install the `StatsPlots.jl` package, which is designed for plotting statistical graphs.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "62bd4a71",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "41053ad6",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Hint</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 3,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d7169004",
+      "cell_type": "markdown",
+      "source": [
+        "Install the package using the command `Pkg.add(\"Package name\").` Enclose the package name in double quotation marks. You do not need to include the `.jl` extension.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d4025b24",
+      "cell_type": "markdown",
+      "source": [
+        "##### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 1,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "78f3a6ab",
+      "cell_type": "code",
+      "source": [
+        "Pkg.add(\"StatsPlots\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": true,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5f18ec39",
+      "cell_type": "markdown",
+      "source": [
+        "###\n\nTo find out which packages are installed and ready for use, you can use the `Pkg.status()` command to check the status of the packages:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "88721336",
+      "cell_type": "code",
+      "source": [
+        "Pkg.status()"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b4d736e7",
+      "cell_type": "markdown",
+      "source": [
+        "###  Loading packages\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "8a3330f4",
+      "cell_type": "markdown",
+      "source": [
+        "In **Julia**, the `import` and `using` statements are used to load packages and provide access to their specific elements, such as functions, types and variables.\n\nBoth statements allow you to use functions from packages or load them, but there is a slight difference in how they are exported into the current namespace:\n\n* `using` – exports all functions.\n* `import` – requires you to explicitly specify which functions to import.\n\nFor example:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d417ea1c",
+      "cell_type": "code",
+      "source": [
+        "import Base.Math.cos\r\nx = cos(0.5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b979f383",
+      "cell_type": "markdown",
+      "source": [
+        "When using `import`, you must write the package name followed by a full stop `.` before calling a function.\n\nThe code above imports the `cos` function from the `Base.Math` package and calls this function with the argument `0.5`. The `cos` function calculates the cosine of an angle in radians and assigns this value to the variable `x`. Thus, the variable will contain the result of calculating the cosine of an angle of `0.5` radians, which is equal to `0.8775825618903728`.\n\nThe `using` statement is designed to load entire packages, rather than individual functions. The code using the `using` statement would then look like this:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "19041ae2",
+      "cell_type": "code",
+      "source": [
+        "using Base.Math\r\ny = cos(0.5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4ca16910",
+      "cell_type": "markdown",
+      "source": [
+        "Thus, `using` is used to load packages and automatically export all their selected names into the current namespace, providing convenient access to the functions and variables of the package. `import` also loads the package, but does not automatically export its names, which helps to avoid potential name conflicts and allows you to explicitly manage the imported elements. Choose the appropriate operator depending on your task.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "53cec1bc",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 2\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c715ab53",
+      "cell_type": "markdown",
+      "source": [
+        "Load the `StatsPlots.jl` package. Then use the `scatter(x,y)` function from this package to plot a scatter graph for the following data: `x=[1 2 3 4 5]` and `y=[8 10 14 16 20]`.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "9925fb64",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "93a90ce3",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Hint</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 3,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5f4ba8e2",
+      "cell_type": "markdown",
+      "source": [
+        "To load the library, use the `using` statement. Then define the two vectors `x` and `y`, listing their elements separated by spaces within square brackets. Next, plot a scatter graph using the `scatter(x,y)` function.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "2badba49",
+      "cell_type": "markdown",
+      "source": [
+        "##### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 1,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "0c9f20d9",
+      "cell_type": "code",
+      "source": [
+        "using StatsPlots\r\nx = [1 2 3 4 5]\r\ny = [8 10 14 16 20]\r\nscatter(x, y)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "7c66f9eb",
+      "cell_type": "markdown",
+      "source": [
+        "## An overview of the main **Julia** packages\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "69ab5f2c",
+      "cell_type": "markdown",
+      "source": [
+        "Below is a brief overview of some frequently used **Julia** packages.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f768385a",
+      "cell_type": "markdown",
+      "source": [
+        "### Visualization\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6614da27",
+      "cell_type": "markdown",
+      "source": [
+        "* [`Plots.jl`](https://engee.com/helpcenter/stable/julia/juliaplots/index.html) is the main package designed for data visualization (for plotting various types of graphs based on numerical data).\n* [`PlotlyJS.jl`](https://engee.com/helpcenter/stable/julia/PlotlyJS/index.html) is a package for data visualization. It provides additional capabilities for creating interactive graphs and saving graphs to files.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "1a1cf517",
+      "cell_type": "markdown",
+      "source": [
+        "### System packages\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f4429028",
+      "cell_type": "markdown",
+      "source": [
+        "* [`Matlab.jl`](https://engee.com/helpcenter/stable/julia/MATLAB/readme.html) – allows you to call **MATLAB** functions from **Julia**.\r\n* [`PyCall.jl`](https://engee.com/helpcenter/stable/julia/PyCall/readme.html) – allows you to call **Python** from **Julia**.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c0478084",
+      "cell_type": "markdown",
+      "source": [
+        "### Working with file formats\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c197b9e9",
+      "cell_type": "markdown",
+      "source": [
+        "* [`MAT.jl`](https://engee.com/helpcenter/stable/julia/MAT/index.html) is a package providing tools for reading and writing data files in the **MATLAB** format to **Julia**.\n* [`JLD2.jl`](https://engee.com/helpcenter/stable/julia/JLD2.html) – this package allows you to save and load data structures **Julia** in a format that is a subset of the HDF5 standard.\n* [`XLSX.jl`](https://engee.com/helpcenter/stable/julia/XLSX.html) is a package for reading and writing **Excel** spreadsheet files.\n* [`CSV.jl`](https://engee.com/helpcenter/stable/julia/CSV.html) is a package for working with delimited text data, whether comma-separated (CSV), tab-separated (TSV) or separated by another character.\n* [`FileIO.jl`](https://engee.com/helpcenter/stable/julia/FileIO.html) – this package provides a general framework for defining file formats and dispatching to the appropriate read and write methods. The two main functions in this package are called `load` and `save`. They provide high-level support for formatted files, in contrast to the low-level `read` and `write` functions in **Julia**.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "cfa361fe",
+      "cell_type": "markdown",
+      "source": [
+        "### Mathematical packages\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "ee7fb810",
+      "cell_type": "markdown",
+      "source": [
+        "* [`LinearAlgebra.jl`](https://engee.com/helpcenter/stable/julia/stdlib/LinearAlgebra.html) – this package contains a wide range of functions for solving linear algebra problems.\n* [`Roots.jl`](https://engee.com/helpcenter/stable/julia/Roots.html) – this package contains functions for solving equations of the form $f(x)=0$. \n* [`DifferentialEquations.jl`](https://engee.com/helpcenter/stable/julia/DifferentialEquations/index.html) is a package for the numerical solution of ordinary differential equations.\n* [`NumericalIntegration.jl`](https://engee.com/helpcenter/stable/julia/NumericalIntegration/README.html) is a package for the numerical integration of discretized data.\n* [`ControlSystems.jl`](https://engee.com/helpcenter/stable/julia/ControlSystems/index.html) is a package containing functions for the analysis and synthesis of control systems (primarily linear ones).\n* [`Interpolations.jl`](https://engee.com/helpcenter/stable/julia/Interpolations/index.html) is a package containing functions for various interpolation methods.\n* [`DynamicalSystems.jl`](https://engee.com/helpcenter/stable/julia/DynamicalSystems/index.html) is a package containing functions for solving non-linear dynamics problems and analyzing time series.\n* [`Calculus.jl`](https://engee.com/helpcenter/stable/julia/Calculus/README.html) is a package containing functions for basic differentiation and integration operations.\n* [`GLPK.jl`](https://engee.com/helpcenter/stable/julia/GLPK/README.html) is a package containing functions for linear programming and linear optimization.\n* [`Ipopt.jl`](https://engee.com/helpcenter/stable/julia/Ipopt/README.html) is a package for the non-linear optimization of high-dimensional problems.\n* [`Distributions.jl`](https://engee.com/helpcenter/stable/julia/Distributions/index.html) is a package containing functions for various probability distributions.\n* [`Polynomials.jl`](https://engee.com/helpcenter/stable/julia/Polynomials.html) – this package provides basic arithmetic operations, integration, differentiation, evaluation, root-finding and approximation for one-dimensional polynomials.\n* [`TaylorSeries.jl`](https://engee.com/helpcenter/stable/julia/TaylorSeries/index.html) is a package containing functions for Taylor series expansions of functions of one or two variables.\n* [`NLSolve.jl`](https://engee.com/helpcenter/stable/julia/NLsolve/README.html) is a package containing functions for solving systems of non-linear equations.\n* [`Symbolics.jl`](https://engee.com/helpcenter/stable/julia/Symbolics/manual.html) is a package for symbolic computation.\n* [`Flux.jl`](https://engee.com/helpcenter/stable/julia/Flux/index.html) is a package for machine learning.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "8c1b4579",
+      "cell_type": "markdown",
+      "source": [
+        "### Data types\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "7702ae43",
+      "cell_type": "markdown",
+      "source": [
+        "* [`DataFrames.jl`](https://engee.com/helpcenter/stable/julia/DataFrames/index.html) is a package providing tools for working with tabular data.\n* [`LaTeXStrings.jl`](https://engee.com/helpcenter/stable/julia/LaTeXStrings/README.html) is a package that simplifies the input of **LaTeX** equations in string-type variables and constants.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6d90fd0d",
+      "cell_type": "markdown",
+      "source": [
+        "### Signal processing and communications\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d16d8195",
+      "cell_type": "markdown",
+      "source": [
+        "* [`FFTW.jl`](https://engee.com/helpcenter/stable/julia/FFTW.html) is a package containing functions for fast Fourier transforms.\n* [`Noise.jl`](https://engee.com/helpcenter/stable/julia/Noise/index.html) is a package containing functions for adding various types of noise to signals and images.\n* [`DSP.jl`](https://engee.com/helpcenter/stable/julia/DSP.html) is a package containing a range of functions for digital signal processing (periodogram calculation, windowing functions, filter synthesis and filtering, convolution, correlation, and linear predictive coding).\n* [`DigitalComm.jl`](https://engee.com/helpcenter/stable/julia/DigitalComm/index.html) – this package provides some useful tools for managing digital communication blocks (bit manipulation, modulation and demodulation, generation and decoding of multi-carrier signals).\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5d28ea39",
+      "cell_type": "markdown",
+      "source": [
+        "### Image processing\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a36b90aa",
+      "cell_type": "markdown",
+      "source": [
+        "[`ImageBinarization.jl`](https://engee.com/helpcenter/stable/julia/ImageBinarization/index.html) – this package contains a range of algorithms for image analysis and binarization.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "9e1e3afd",
+      "cell_type": "markdown",
+      "source": [
+        "### Statistics\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "047b42d1",
+      "cell_type": "markdown",
+      "source": [
+        "* [`StatsBase.jl`](https://engee.com/helpcenter/stable/julia/StatsBase/index.html) is a package that provides solutions for basic statistical tasks.\n* [`HypothesisTests.jl`](https://engee.com/helpcenter/stable/julia/HypothesisTests/index.html) is a package containing various functions for testing statistical hypotheses.\n* [`GLM.jl`](https://engee.com/helpcenter/stable/julia/GLM/index.html) is a package for building linear and generalized linear models.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "29f4e709",
+      "cell_type": "markdown",
+      "source": [
+        "Let’s now take a closer look at the capabilities of some of these packages. \n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "e954b75b",
+      "cell_type": "markdown",
+      "source": [
+        "### The `Plots.jl` package\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "83e01c24",
+      "cell_type": "markdown",
+      "source": [
+        "The `Plots.jl` package provides an interface and a set of tools for data visualization. \n\nThis package is already pre-installed in **AnyMath**, so you can start using it with the following command:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "12a573b3",
+      "cell_type": "code",
+      "source": [
+        "using Plots"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "3000eec0",
+      "cell_type": "markdown",
+      "source": [
+        "Let’s look at some of the features of this package. The most versatile tool for creating graphs of numerical data is the `plot` function.\n\nExample. Let’s create a graph of the sine function. For the `x` coordinates, we can create a range from $0$ to $10$, consisting, say, of $100$ elements. For the `y` coordinates, you can create a vector by element-wise computing `sin(x)`. To do this, we write a full stop immediately after calling the function. Finally, we use the `plot` function to plot the line.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "bf33ff2d",
+      "cell_type": "code",
+      "source": [
+        "x = range(0, 10, length=100)\r\ny = sin.(x)\r\nplot(x, y)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "e5088201",
+      "cell_type": "markdown",
+      "source": [
+        "In `Plots.jl`, each column represents a **row** – a set of connected points that form lines, surfaces or other graph primitives. We can plot multiple lines by specifying a matrix of values, where each column is interpreted as a separate line. Below, `[y1 y2]` forms a matrix of size $100 \\times 2$ ($100$ rows, $2$ columns).\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "986dc6b0",
+      "cell_type": "code",
+      "source": [
+        "x = range(0, 10, length=100)\r\ny1 = sin.(x)\r\ny2 = cos.(x)\r\nplot(x, [y1 y2])"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5e45d0c6",
+      "cell_type": "markdown",
+      "source": [
+        "Furthermore, you can add additional lines to the canvas by modifying the `plot` object. To do this, use the `plot!` command, where `!` indicates that the command modifies the current graph.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "e12de991",
+      "cell_type": "code",
+      "source": [
+        "y3 = sin.(x).^2 .- 1/2\r\nplot!(x, y3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "e87cf896",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 3\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "8cb2cea2",
+      "cell_type": "markdown",
+      "source": [
+        "Using the `plot` and `plot!` functions, plot the graphs of the functions $y=x^2$ and $y=x^3$ on a single graph canvas, specifying the `x` values as a range from $-10$ to $10$, consisting of $100$ elements.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "324925c0",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "64116580",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 1,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "425f32ee",
+      "cell_type": "code",
+      "source": [
+        "using Plots\r\nx = range(-10, 10, length=100)\r\ny1 = x.^2\r\ny2 = x.^3\r\nplot(x, y1)\r\nplot!(x, y2)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "37ef3bf1",
+      "cell_type": "markdown",
+      "source": [
+        "###\r\n\r\nGraphs are saved using the `savefig` command. For example:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "eb8f3135",
+      "cell_type": "code",
+      "source": [
+        "savefig(\"myplot.png\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "366fe953",
+      "cell_type": "markdown",
+      "source": [
+        "Graphs in **Julia** can be stylized. In `Plots.jl`, graph modifiers are called **attributes**. When working with data and attributes, the following rules apply: positional arguments correspond to the input data, whilst named arguments correspond to the attributes.\n\nFor example, `plot(x, y, z)` represents three-dimensional data for three-dimensional graphs without attributes, whilst `plot(x, y, attribute=value)` represents two-dimensional data with a single attribute assigned a specific value.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "9d93f763",
+      "cell_type": "markdown",
+      "source": [
+        "As an example, let’s look at changing the line width using `linewidth` (or its alias `lw`), changing the labels of symbols using `label`, and adding a title using `title`. Let’s apply all this to the sine and cosine graphs:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "0ad9d1b8",
+      "cell_type": "code",
+      "source": [
+        "x = range(0, 10, length=100)\r\ny1 = sin.(x)\r\ny2 = cos.(x)\r\nplot(x, [y1 y2], title=\"Trigonometric functions\", label=[\"sin(x)\" \"cos(x)\"], linewidth=3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "f5c25dda",
+      "cell_type": "markdown",
+      "source": [
+        "Another widely used type of graph is the scatter plot (dots not connected by lines). It is plotted using the `scatter` function. For example, let’s plot a sine wave and add a random component to it.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "ec9a7ba7",
+      "cell_type": "code",
+      "source": [
+        "x = range(0, 10, length=100)\r\ny = sin.(x)\r\ny_noisy = y .+ 0.1*randn(100)\r\nplot(x, y, label=\"sin(x)\")\r\nscatter!(x, y_noisy, label=\"data\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2c25cd4e",
+      "cell_type": "markdown",
+      "source": [
+        "You can find out more about the `Plots.jl` package in the [documentation](https://engee.com/helpcenter/stable/en/julia/juliaplots/tutorial.html).\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "03be9146",
+      "cell_type": "markdown",
+      "source": [
+        "### The `LinearAlgebra.jl` package\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "9a337a48",
+      "cell_type": "markdown",
+      "source": [
+        "The `LinearAlgebra.jl` package contains implementations of many commonly used linear algebra operations.\n\nExample. For matrix `A`, let’s compute the trace, determinant and inverse matrix using the functions `tr`, `det` and `inv` respectively.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6545e9e4",
+      "cell_type": "code",
+      "source": [
+        "using LinearAlgebra\r\nA = [1 2 3; 4 1 6; 7 8 1]"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "a2c30a88",
+      "cell_type": "code",
+      "source": [
+        "tr(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "90178f5f",
+      "cell_type": "code",
+      "source": [
+        "det(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "d95f3d92",
+      "cell_type": "code",
+      "source": [
+        "inv(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "8fb44bb0",
+      "cell_type": "markdown",
+      "source": [
+        "The eigenvalues and eigenvectors of a matrix are found using the functions `eigvals` and `eigvecs`, respectively:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "76fbeec7",
+      "cell_type": "code",
+      "source": [
+        "A = [-4. -17.; 2. 2.]\r\neigvals(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4f5fc4bc",
+      "cell_type": "code",
+      "source": [
+        "eigvecs(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "3600192c",
+      "cell_type": "markdown",
+      "source": [
+        "Furthermore, the `LinearAlgebra.jl` package provides a variety of matrix decompositions. For example, the LU decomposition is performed using the `factorize` function:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "711de9c4",
+      "cell_type": "code",
+      "source": [
+        "A = [1.5 2 -4; 3 -1 -6; -10 2.3 4]\r\nfactorize(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5ce286f1",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 4\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "602e6abc",
+      "cell_type": "markdown",
+      "source": [
+        "Given the matrix $A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 10 \\end{pmatrix}$, use the functions from the `LinearAlgebra.jl` package to compute the trace, determinant, inverse, eigenvalues and eigenvectors of this matrix.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "944e9476",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "eb554b81",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Solution</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 5,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a99a07e3",
+      "cell_type": "code",
+      "source": [
+        "using LinearAlgebra\r\nA = [1 2 3; 4 5 6; 7 8 10]\r\ntr(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "73e309f0",
+      "cell_type": "code",
+      "source": [
+        "det(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2c28f9b2",
+      "cell_type": "code",
+      "source": [
+        "inv(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1ea2285f",
+      "cell_type": "code",
+      "source": [
+        "eigvals(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "400e9fe0",
+      "cell_type": "code",
+      "source": [
+        "eigvecs(A)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2f54dd0e",
+      "cell_type": "markdown",
+      "source": [
+        "###\r\n\r\nYou can find out more about the `LinearAlgebra.jl` package in the [documentation](https://engee.com/helpcenter/stable/julia/stdlib/LinearAlgebra.html).\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c61299ef",
+      "cell_type": "markdown",
+      "source": [
+        "## Creating your own packages\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "55c6af89",
+      "cell_type": "markdown",
+      "source": [
+        "The `module` command is used to create your own packages. To do this, run the following steps:\n\n1. Create a `module` script and refer to it as your package (in our case, `Test_lib`), then add the content of the module, such as the `get_value` function, which simply returns the input value:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "16ee1c30",
+      "cell_type": "code",
+      "source": [
+        "module Test_lib\r\n    function get_value(x)\r\n        return x\r\n    end\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "6e31a965",
+      "cell_type": "markdown",
+      "source": [
+        "2. To load the package you have created, use the `import` or `using` statement.\n```julia\nimport.Test_lib.get_value\n```\n\nor\n```julia\nusing.Test_lib\n```\n\n3. Next, call the required function using the `import` statement:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6ec3b341",
+      "cell_type": "code",
+      "source": [
+        "import.Test_lib.get_value\r\nimport_value = get_value(7)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4b7885f5",
+      "cell_type": "markdown",
+      "source": [
+        "or using the `using` statement:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "af61bd84",
+      "cell_type": "code",
+      "source": [
+        "using.Test_lib\r\nusing_value = get_value(7)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ac25cf84",
+      "cell_type": "markdown",
+      "source": [
+        "{% note info \"Note\" %}\n\nA full stop must be added between `import` and the package name when importing a custom package from a `module`. The same applies to `using`.\n\n{% endnote %}\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "aa8dd223",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️Task 5\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "afed7263",
+      "cell_type": "markdown",
+      "source": [
+        "Create a package called `My_lib` containing a single function `opp(x)`, which returns the opposite of the input value. Then load the `opp` function from the `My_lib` package using the `import.My_lib.opp` statement. After that, use the `opp` function to find the opposite of the number $5$.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "700157fb",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b3983e00",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">Solution</span>\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 2,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "cdc86e1c",
+      "cell_type": "code",
+      "source": [
+        "# Create a package\r\nmodule My_lib\r\n    function opp(x)\r\n        return -x\r\n    end\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2ec933ef",
+      "cell_type": "code",
+      "source": [
+        "# Use the package\r\nimport.My_lib.opp\r\nopp(5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "IJulia 1.9.3",
+      "language": "julia",
+      "name": "ijulia-1.9"
+    },
+    "language_info": {
+      "file_extension": ".jl",
+      "name": "julia",
+      "version": "1.9.3"
+    },
+    "engee": {}
+  },
+  "cells": [
+    {
+      "id": "cb45fe35",
+      "cell_type": "markdown",
+      "source": [
+        "课程 **AnyMath 编程基础** 旨在教授 **Julia** 编程基础，**Julia** 是 **AnyMath** 环境中主要使用的语言。\n\n**Julia** 编程语言是一种具有**动态类型**的高级编译型语言。动态类型意味着用户在编写程序时无需指定任何变量的类型，而静态类型语言（例如 **C**）则要求指定类型。该语言的语法与 **MATLAB** 和 **Python** 相似，这使得将程序从一种语言移植到另一种语言更加容易。创建 **Julia** 的主要目标是开发一种通用语言，既能处理大规模计算，又能保证最高性能。\n\n**Julia** 相较于同类语言的优势：\n\n* 免费且开源。\n* 无需为了提高性能而将代码向量化；非向量化代码也运行得足够快。\n* 支持并行计算和分布式计算。\n* 完善的类型系统：**Julia** 内置支持复数、有理数和任意精度数值。它实现了现代常用数据类型：向量、矩阵、多维数组、元组、字典、集合、位数组和位字符串。\n* 高效的 Unicode 支持，包括但不限于 UTF-8；可以在变量名、函数名以及运算符符号中使用许多 Unicode 字符。\n* 高性能。\n\n因此，**Julia** 是一种灵活而强大的工具，可帮助科研人员解决几乎所有科学技术实践领域中的任务。\n\n**Julia** 语言的完整文档可在 [网站](https://docs.julialang.org/en/v1/) 上查看。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f81baf9e",
+      "cell_type": "markdown",
+      "source": [
+        "本课程共包含 10 个章节：\n\n 1. 变量与数据类型\n 2. 表达式\n 3. 数据的读写\n 4. 数组\n 5. 字符与字符串\n 6. 函数\n 7. 条件语句\n 8. 循环\n 9. 包\n10. 总结\n\n第 1 至 9 节包含理论部分、实践示例和自学任务。\n\n在学习本课程之前，建议先完成课程 **Welcome to AnyMath**。\n\n本课程预计时长为 6 小时。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "1bdbccdf",
+      "cell_type": "markdown",
+      "source": [
+        "本课程使用以下 **Julia** 包中的函数：`Plots`、`Printf`、`DataFrames`、`CSV` 和 `LinearAlgebra`。`Plots`、`Printf` 和 `DataFrames` 包已在 **AnyMath** 中预安装。`CSV` 和 `LinearAlgebra` 包需要通过运行下面给出的准备代码来安装。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c01bac10",
+      "cell_type": "markdown",
+      "source": [
+        "<div style=\"background: #FFE5D0; border-radius: 5px; padding: 5px\"><span>👍 请在开始课程前运行以下单元格：</span></div>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "bc69d7aa",
+      "cell_type": "code",
+      "source": [
+        "EngeePkg.purge()                    # Cleaning the surroundings\r\nPkg.add([\"CSV\", \"LinearAlgebra\"])   # Installing the required packages"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 3200
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "27444619",
+      "cell_type": "markdown",
+      "source": [
+        "`EngeePkg.purge()`该命令将清空环境——即移除所有先前安装的包。此步骤旨在确保本课程所用包能正确安装。若您此前曾自行安装过任何第三方包，则需在课程结束后重新安装。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "ff80def0",
+      "cell_type": "markdown",
+      "source": [
+        "<font color=\"gray\">**注意：安装包需要网络连接**</font>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    }
+  ]
+}

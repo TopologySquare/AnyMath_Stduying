@@ -1,0 +1,1353 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "IJulia 1.9.3",
+      "language": "julia",
+      "name": "ijulia-1.9"
+    },
+    "language_info": {
+      "file_extension": ".jl",
+      "name": "julia",
+      "version": "1.9.3"
+    },
+    "engee": {}
+  },
+  "cells": [
+    {
+      "id": "946acbe0",
+      "cell_type": "markdown",
+      "source": [
+        "# 条件语句\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "344c2b6b",
+      "cell_type": "markdown",
+      "source": [
+        "## if和else语句\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f96a46c1",
+      "cell_type": "markdown",
+      "source": [
+        "**条件语句**允许根据逻辑表达式的值来决定代码的某些部分是否执行或跳过。`if` –`else`条件结构的语法如下。\n\n```\nif logical_expression\n    actions_1\nelse\n    actions_2\nend\n```\n\n如果`logical_expression`计算结果为`true`，则执行操作序列`action_1`。如果`logical_expression`计算结果为`false`，则执行操作序列`action_2`。条件语句结构由强制关键字`end`结束。\n\n例如，让我们比较两个数值`x`和`y`。如果它们相等，则屏幕上会显示消息“x等于y”。否则（即`x`不等于`y`时），则显示消息“x不等于y”。执行这些操作的代码如下所示：\n\n```\nif x == y\n    println(\"x equals y\")\nelse\n    println(\"x is not equal to y\")\nend\n```\n\n\n如果条件表达式`x == y`的计算结果为`true`，则执行相应的代码块；否则，执行`else`代码块。以下是其实际工作原理。让我们创建一个函数`compare(x,y)`，用于比较两个参数`x`和`y`：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "cf84196c",
+      "cell_type": "code",
+      "source": [
+        "function compare(x, y)\r\n    if x == y\r\n        println(\"x equals y\")\r\n    else\r\n        println(\"x is not equal to y\")\r\n    end\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "93b1bc32",
+      "cell_type": "markdown",
+      "source": [
+        "让我们使用参数`(1,2)`和`(3,3)`调用此函数：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "464faef7",
+      "cell_type": "code",
+      "source": [
+        "compare(1,2)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "67eae825",
+      "cell_type": "code",
+      "source": [
+        "compare(3,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "6a526145",
+      "cell_type": "markdown",
+      "source": [
+        "###  ✏️任务1\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "acc4e448",
+      "cell_type": "markdown",
+      "source": [
+        "编写一个函数`even_odd`，该函数接受整数`n`作为输入，并返回一条文本消息，指示该数是偶数还是奇数。然后分别以$4$、$5$、$-4$和$-5$作为参数调用该函数。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "212e4d9e",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "94d68ff9",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">提示</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 7,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "1a90ea1a",
+      "cell_type": "markdown",
+      "source": [
+        "请记住，判断一个数是否为偶数的方法如下：若该数除以$2$后的余数为0，则该数为偶数；否则，该数为奇数。计算数`n`除以$2$后的余数方法如下：`mod(n,2)`。在函数声明中，需指定输入数据类型（`Int`）：`function even_odd(n::Int)`。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "067f1cf0",
+      "cell_type": "markdown",
+      "source": [
+        "##### <span style=\"background-color: #c2ebff\">解法</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 5,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "209e4f15",
+      "cell_type": "code",
+      "source": [
+        "function even_odd(n::Int)\r\n    if mod(n,2) == 0\r\n        println(n, \" even\")\r\n    else\r\n       println(n, \" odd\")\r\n    end   \r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "fefc9759",
+      "cell_type": "code",
+      "source": [
+        "even_odd(4)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "418852e2",
+      "cell_type": "code",
+      "source": [
+        "even_odd(5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "0094e75f",
+      "cell_type": "code",
+      "source": [
+        "even_odd(-4)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ccecdaec",
+      "cell_type": "code",
+      "source": [
+        "even_odd(-5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1cb34148",
+      "cell_type": "markdown",
+      "source": [
+        "##  `elseif`语句\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f4d12dee",
+      "cell_type": "markdown",
+      "source": [
+        "在`if`之后，可以使用另一个条件语句`elseif`，以指定后续代码块执行的附加条件。\r\n\r\n```\r\nif logical_expression_1\r\n    actions_1\r\nelseif logical_expression_2\r\n    actions_2\r\nelse \r\n    actions_3\r\nend\r\n```\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "09d097aa",
+      "cell_type": "markdown",
+      "source": [
+        "让我们修改上一例中的`compare`函数。我们将比较两个数值：`x`和`y`。如果它们相等，则在屏幕上显示消息“x等于y”；否则，如果`x > y`，则显示消息“x大于y”。最后，如果未满足最后一个条件（即`x < y`），则显示消息“x小于y”。 \n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a656b999",
+      "cell_type": "code",
+      "source": [
+        "function compare(x, y)\r\n    if x == y\r\n        println(\"x equals y\")\r\n    elseif x > y\r\n        println(\"x is greater than y\")\r\n    else \r\n        println(\"x is less than y\")\r\n    end\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "9557b935",
+      "cell_type": "markdown",
+      "source": [
+        "让我们测试一下这个函数：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f86a278a",
+      "cell_type": "code",
+      "source": [
+        "compare(4,4)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "f23f4ed2",
+      "cell_type": "code",
+      "source": [
+        "compare(6,5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "d27b949c",
+      "cell_type": "code",
+      "source": [
+        "compare(7,8)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "bf11cf0c",
+      "cell_type": "markdown",
+      "source": [
+        "`elseif`和`else`模块是可选的。一个条件结构中可以包含任意数量的`elseif`模块。在`if` –`elseif` –`else`结构中，条件表达式会依次求值，直到其中一个求值结果为`true`，此时对应的模块才会被执行。后续的条件表达式或模块将不再被求值。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c1ff86c0",
+      "cell_type": "markdown",
+      "source": [
+        "###  ✏️任务2\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "7296ccd5",
+      "cell_type": "markdown",
+      "source": [
+        "编写一个函数`translate`，该函数有一个名为`s`的文本类型输入参数，该参数取以下值之一：`\"one\"`、`\"two\"`、`\"three\"`、`\"four\"`或`\"five\"`。该函数返回输入单词的法语翻译。如果参数取值与上述指定值不符，该函数将返回文本消息：`\"I can't translate\"`。接下来，请通过传入参数值`\"one\"`、`\"three\"`和`\"six\"`来测试此函数。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5889a44f",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "6fd02e96",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">提示</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 6,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4262c9c4",
+      "cell_type": "markdown",
+      "source": [
+        "在函数声明中，请指定输入数据的类型（`String`）：`function translate(s::String)`。在函数内部，你需要检查五个条件（变量`s`是否等于待翻译的五个单词中的每一个）。因此，你需要一个`if`关键字和四个`elseif`关键字。此外，条件结构中的最后一个`else`关键字将处理变量`s`不属于这五个指定值中的任何一种的情况。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "679fac06",
+      "cell_type": "markdown",
+      "source": [
+        "##### <span style=\"background-color: #c2ebff\">解决方案</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 4,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "7557eda7",
+      "cell_type": "code",
+      "source": [
+        "function translate(s::String)\r\n    if s == \"one\"\r\n        println(\"un\")\r\n    elseif s == \"two\"\r\n        println(\"deux\")\r\n    elseif s == \"three\"\r\n        println(\"trios\")\r\n    elseif s == \"four\"\r\n        println(\"quatre\")\r\n    elseif s == \"five\"\r\n        println(\"cinq\")\r\n    else\r\n        println(\"I can't translate\")    \r\n    end    \r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "13d9a514",
+      "cell_type": "code",
+      "source": [
+        "translate(\"one\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "af68d9b0",
+      "cell_type": "code",
+      "source": [
+        "translate(\"three\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "cff027d9",
+      "cell_type": "code",
+      "source": [
+        "translate(\"six\")"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "af9e64d6",
+      "cell_type": "markdown",
+      "source": [
+        "###\r\n\r\n条件结构是“开放”的，即它们不形成局部范围。这意味着在条件结构内定义的新变量可以在结构之后使用，甚至这些变量此前未被定义过。因此，上文所示的`compare`函数可以定义如下：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "e1e9d236",
+      "cell_type": "code",
+      "source": [
+        "function compare(x,y)\r\n    if x == y\r\n        relation = \"equal to\"\r\n    elseif x > y\r\n        relation = \"more\"\r\n    else\r\n        relation = \"less\"\r\n    end\r\n    println(\"x \", relation, \" y\")\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "f7cbefcb",
+      "cell_type": "markdown",
+      "source": [
+        "变量`relation`虽在条件结构内部声明，但被用于其外部。不过，使用此特性时，必须为代码的每条可能执行路径都定义该变量的值。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "edf83bb4",
+      "cell_type": "markdown",
+      "source": [
+        "## 使用条件语句的实际示例\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "3fb80b09",
+      "cell_type": "markdown",
+      "source": [
+        "举例来说，我们考虑函数**，它用于计算阶乘**，并使用了条件语句。该函数接收一个整数参数`n`。随后会检查两个条件：如果$n<0$，则无法计算负数的阶乘，此时会在屏幕上显示一条错误信息；如果$n=0$，则执行$n!=1$；否则，使用公式$n!=n \\cdot (n-1)$计算阶乘。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "dee27d3e",
+      "cell_type": "code",
+      "source": [
+        "function fact(n::Int)\r\n    if n < 0\r\n        return \"n must be non-negative\"\r\n    elseif n == 0\r\n        return n = 1\r\n    else\r\n        return n*fact(n-1)\r\n    end    \r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4bdffaf5",
+      "cell_type": "markdown",
+      "source": [
+        "让我们通过将该函数的参数分别设置为$-1$、$0$和$5$来测试该函数：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "30c972a0",
+      "cell_type": "code",
+      "source": [
+        "fact(-1)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4d24e9d4",
+      "cell_type": "code",
+      "source": [
+        "fact(0)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b6a2cac1",
+      "cell_type": "code",
+      "source": [
+        "fact(5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "96bfaba8",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️任务3\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "98156fad",
+      "cell_type": "markdown",
+      "source": [
+        "编写一个函数`right`，该函数以三角形三边长度`a`、`b`和`c`作为输入，并返回一条文本消息，说明该三角形是否为直角三角形。然后使用参数值`(2,6,7)`和`(5,3,4)`调用该函数进行测试。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5113f3da",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "7cb7f666",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">提示</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 5,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "0d2fa383",
+      "cell_type": "markdown",
+      "source": [
+        "对于直角三角形，毕达哥拉斯定理成立：$a^2+b^2=c^2$。由于我们不知道哪一边是斜边、哪两边是直角边，因此可以通过依次将三角形的三条边分别设为斜边，来验证该等式是否成立。如果至少有一种情况下该等式成立，则该三角形为直角三角形。最方便的做法是使用逻辑“或”运算符将这三个条件合并为一个条件。该条件将如下所示：\r\n\r\n```\r\nif a^2+b^2 == c^2 || b^2+c^2 == a^2 || a^2+c^2 == b^2\r\n```\r\n\r\n如果该条件不成立，则该三角形不是直角三角形。因此，在条件语句中，你只需要`if`和`else`这两条语句。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5812ef66",
+      "cell_type": "markdown",
+      "source": [
+        "##### <span style=\"background-color: #c2ebff\">解法</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 3,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c8956e5e",
+      "cell_type": "code",
+      "source": [
+        "function right(a,b,c)\r\n    if a^2+b^2 == c^2 || b^2+c^2 == a^2 || a^2+c^2 == b^2\r\n        println(\"the triangle is a right-angled triangle\")\r\n    else\r\n        println(\"the triangle is not a right-angled triangle\")    \r\n    end    \r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ae28d066",
+      "cell_type": "code",
+      "source": [
+        "right(2,6,7)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5934cb2f",
+      "cell_type": "code",
+      "source": [
+        "right(5,3,4)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    }
+  ]
+}

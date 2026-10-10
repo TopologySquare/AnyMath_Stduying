@@ -1,0 +1,5033 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "IJulia 1.9.3",
+      "language": "julia",
+      "name": "ijulia-1.9"
+    },
+    "language_info": {
+      "file_extension": ".jl",
+      "name": "julia",
+      "version": "1.9.3"
+    },
+    "engee": {}
+  },
+  "cells": [
+    {
+      "id": "982ce152",
+      "cell_type": "markdown",
+      "source": [
+        "# 函数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5fd7ba05",
+      "cell_type": "markdown",
+      "source": [
+        "## 创建函数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d438b3d6",
+      "cell_type": "markdown",
+      "source": [
+        "在**Julia** 语言中，函数是一个将一组参数值映射到返回值的对象。在 **Julia** 中定义函数的基本语法如下：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4319a775",
+      "cell_type": "code",
+      "source": [
+        "function f(x,y)\r\n    x + y\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "0cd2d6e6",
+      "cell_type": "markdown",
+      "source": [
+        "该函数接受两个参数，`x`和`y`，并返回最后一个被求值的表达式的值：`x + y`。\n\n在**Julia中，还有一种更简洁的函数定义语法**：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d88d9ac4",
+      "cell_type": "code",
+      "source": [
+        "f(x,y) = x + y"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "14e48ef0",
+      "cell_type": "markdown",
+      "source": [
+        "在赋值形式中，函数体必须由单个表达式组成。这种简洁的函数语法非常直观；它显著减少了需要输入的文本量，并消除了视觉噪音。\n\n调用函数时，总是使用函数名加上用圆括号括起的参数值列表：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "ec4d05aa",
+      "cell_type": "code",
+      "source": [
+        "f(2,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4729c676",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️任务1\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "2d869db6",
+      "cell_type": "markdown",
+      "source": [
+        "创建一个函数`f(x)`，用于求解多项式$2x^2+3x+5$。然后调用函数`f`，其参数值分别为$4$和 $74.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5f06d6e2",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "46842f0e",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">解决方案</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 3,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5d50a856",
+      "cell_type": "code",
+      "source": [
+        "function f(x)\r\n    2*x^2+3*x+5\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "9941899c",
+      "cell_type": "code",
+      "source": [
+        "f(4)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b363110d",
+      "cell_type": "code",
+      "source": [
+        "f(7)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "8e38784b",
+      "cell_type": "markdown",
+      "source": [
+        "###\r\n\r\n不带括号时，表达式 `f` 表示函数对象，可以像其他任何值一样传递：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "22377d58",
+      "cell_type": "code",
+      "source": [
+        "new_func = f\r\nnew_func(2,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c5d0d0f1",
+      "cell_type": "markdown",
+      "source": [
+        "与 **Julia** 中的其他名称一样，函数名可以使用任何 Unicode 字符。\r\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4a8a29ce",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️任务2\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f2736bee",
+      "cell_type": "markdown",
+      "source": [
+        "Create a function `func(x,y,z)` that calculates the sine of the sum of its arguments. Then call the function `func` with the following argument values: $$, $$ and $\\pi/4 xml-ph-0000@deepl.内部 \\pi/3 xml-ph-0001@deepl.内部 \\pi/5$.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "86293a86",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b1c2452e",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">解决方案</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 2,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "e52e46e5",
+      "cell_type": "code",
+      "source": [
+        "function func(x,y,z)\r\n    sin(x+y+z)\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "952143e5",
+      "cell_type": "code",
+      "source": [
+        "func(pi/4, pi/3, pi/5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2f78671e",
+      "cell_type": "markdown",
+      "source": [
+        "## The `return` keyword\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d974d9db",
+      "cell_type": "markdown",
+      "source": [
+        "函数返回的值是最后一个被计算表达式的值，默认情况下也就是函数定义体中最后一个表达式的值。对于上面定义的函数 `f`，这就是表达式 `x + y` 的值。或者，`return` 关键字会使函数立即结束，并返回所给表达式的值。\n\n例如：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "7b44b79d",
+      "cell_type": "code",
+      "source": [
+        "function g(x,y)\r\n    return x * y\r\n    x + y\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "7ace39a7",
+      "cell_type": "markdown",
+      "source": [
+        "Let’s call the function `g` with arguments $$ and $2 xml-ph-0000@deepl.内部 3$:\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a69a440f",
+      "cell_type": "code",
+      "source": [
+        "g(2,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1132da77",
+      "cell_type": "markdown",
+      "source": [
+        "As we can see, the function `g` ran the operation of multiplying the arguments $$ and $2 xml-ph-0000@deepl.内部 3$, i.e. the operation written immediately after the `return` keyword, whilst the next operation (the addition of the arguments `x` and `y`) was ignored.\n\nOf course, in the linear body of a function (such as `g`), using `return` is pointless. Since the expression `x + y` is never evaluated, we could simply make `x * y` the last expression in the function and omit `return`. However, in the case of a different control flow, `return` can indeed be useful.\n\nHere, for example, is the function `quadratic`, which calculates the roots of the quadratic equation $ax²+bx+c=0$. The arguments of the function are the coefficients `a`, `b` and `c`. \n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "684ea33b",
+      "cell_type": "code",
+      "source": [
+        "function quadratic(a,b,c)\r\n    D = b^2 - 4*a*c\r\n    if D < 0\r\n        return \"There are no real roots\"\r\n    elseif D == 0\r\n        return -b/2a\r\n    else\r\n        return ((-b+sqrt(D))/2a, (-b-sqrt(D))/2a)\r\n    end    \r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "8138babb",
+      "cell_type": "markdown",
+      "source": [
+        "该函数有三个可能的返回点，会根据判别式 `D` 的值返回三个不同表达式的值。最后一行中的 `return` 关键字可以省略，因为这是最后一个表达式。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6649d0d3",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️任务3\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "96d270f4",
+      "cell_type": "markdown",
+      "source": [
+        "Check that the `quadratic` function works by using it to solve the following three quadratic equations: \n* $$, \n* $$, \n* $x²+5x+7=0 xml-ph-0000@deepl.内部 x²-2x+1=0 xml-ph-0001@deepl.内部 x²+6x-16=0$.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "062fb076",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "498a7218",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">解决方案</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 3,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "1d2b49d8",
+      "cell_type": "code",
+      "source": [
+        "quadratic(1,5,7)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "9ea24435",
+      "cell_type": "code",
+      "source": [
+        "quadratic(1,-2,1)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c13d005c",
+      "cell_type": "code",
+      "source": [
+        "quadratic(1,6,-16)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c07f6281",
+      "cell_type": "markdown",
+      "source": [
+        "## Tuples\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "0c2c785e",
+      "cell_type": "markdown",
+      "source": [
+        "**Julia** 有一种内置数据类型，称为**元组**，它与函数参数和返回值密切相关。元组是一种长度固定的容器，可以保存任意值，但不能被修改。元组的构造方式如下：将元组元素用逗号分隔列出，并将整个列表放在圆括号中。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "9f006ea2",
+      "cell_type": "code",
+      "source": [
+        "(1, 2, 3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "37ab17b6",
+      "cell_type": "code",
+      "source": [
+        "x = (0.0, \"hello\", 6*7)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c6425aab",
+      "cell_type": "markdown",
+      "source": [
+        "可以使用索引访问元组中的元素：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4ead8d5d",
+      "cell_type": "code",
+      "source": [
+        "x[2]"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "dbc6dec3",
+      "cell_type": "markdown",
+      "source": [
+        "只有一个元素的元组必须写出逗号：`(1,)`，而 `()` 表示空元组（长度为 $0$）。\n\n元组中的元素可以命名；在这种情况下，会构造一个**命名元组**：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a0a639c5",
+      "cell_type": "code",
+      "source": [
+        "x = (a=1, b=2)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "f19f28ff",
+      "cell_type": "markdown",
+      "source": [
+        "命名元组中的元素除了可以使用普通索引语法（`x[1]`）访问外，也可以使用点号语法（`x.a`）按名称访问。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "74446f77",
+      "cell_type": "code",
+      "source": [
+        "x.a"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2ee621f1",
+      "cell_type": "markdown",
+      "source": [
+        "赋值语句左侧可以出现一个以逗号分隔的变量列表（也可以选择用括号括起来）：右侧的值会通过遍历变量并依次赋值而被**解构**：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6c307459",
+      "cell_type": "code",
+      "source": [
+        "a, b, c = (1, 2, 3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "32612210",
+      "cell_type": "markdown",
+      "source": [
+        "右侧的值可以是元组、数组或迭代器（例如 `1:3`），其长度至少应与左侧变量集合的长度相同（右侧多余的元素会被忽略）。\n\n元组常用于从函数返回多个值。例如，下面的函数返回两个值：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "ee5aa2f1",
+      "cell_type": "code",
+      "source": [
+        "function func(a,b)\r\n    a+b, a*b\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "18dcf454",
+      "cell_type": "markdown",
+      "source": [
+        "如果调用该函数时没有将返回值赋给变量，你会看到返回的是一个元组：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d14fe883",
+      "cell_type": "code",
+      "source": [
+        "func(2,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "9aac719e",
+      "cell_type": "markdown",
+      "source": [
+        "解构赋值会将每个值提取到对应的变量中：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "24c8f44a",
+      "cell_type": "code",
+      "source": [
+        "(x, y) = func(2,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "e6e77285",
+      "cell_type": "markdown",
+      "source": [
+        "变量列表 `x` 和 `y` 也可以不加括号书写：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "369527bf",
+      "cell_type": "code",
+      "source": [
+        "x, y = func(2,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "d0b11c67",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️任务4\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "fa974661",
+      "cell_type": "markdown",
+      "source": [
+        "创建一个函数 `pow(x,y)`，返回两个值：$x^y$ 和 $y^x$。然后使用参数值 $5$ 和 $7$ 调用该函数。将返回值赋给变量 `a` 和 `b`，并在屏幕上输出变量 `a` 和 `b` 的值。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6a87a929",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "822d416f",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">解决方案</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 2,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a7121e68",
+      "cell_type": "code",
+      "source": [
+        "function pow(x,y)\r\n    x^y, y^x\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "360ac399",
+      "cell_type": "code",
+      "source": [
+        "(a, b) = pow(5, 7)\r\nprintln(a)\r\nprintln(b)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b3b2ad51",
+      "cell_type": "markdown",
+      "source": [
+        "## Named arguments\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "362f715f",
+      "cell_type": "markdown",
+      "source": [
+        "有些函数需要大量参数，或者具有大量行为选项。记住如何调用这类函数可能比较困难。**命名参数**可以让这些复杂接口更易于使用和扩展，因为参数可以通过名称而不仅仅通过位置来标识。\n\n例如，考虑用于绘制折线图的 `plot` 函数。该函数可能有许多参数，用于控制线型、粗细、颜色等。如果它接受命名参数，则一次可能的调用可以写成 `plot(x, y, width=2)`，其中我们只指定了线宽。这有两个作用：\n* 调用更易读，因为可以用参数名标明每个值的含义。\n* 可以按任意顺序传入大量参数中的任意子集。\n\n定义带命名参数的函数时，需要在参数列表中使用分号：\n```\nfunction plot(x, y; style=\"solid\", width=1, color=\"black\")\n    ###\nend\n```\n\n调用函数时，分号是可选的：可以调用 `plot(x, y, width=2)`，也可以调用 `plot(x, y; width=2)`，但第一种写法更常见。\n\n命名参数的默认值只在需要时（即未提供对应命名参数时）才会被计算，并且按从左到右的顺序计算。因此，默认表达式可以引用前面的命名参数。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "1d4c7f57",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️任务5\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "0dbe6a37",
+      "cell_type": "markdown",
+      "source": [
+        "Create a function `cost` that calculates the cost of a gold ingot in the shape of a rectangular parallelepiped. The function must be supplied with four named arguments: `length` (length, cm), `width` (width, cm), `height` (height, cm) and `price` (price, roubles per gram). Assume the density of gold to be $$. Then, by calling this function, calculate the value of a gold ingot measuring $19.32 \\text{ g/cm}^3 xml-ph-0000@deepl.内部 10 \\times 3 \\times 1$ cm and costing 6,200 roubles per gram.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "77a524f8",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "504a215c",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">提示</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 4,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6dadd070",
+      "cell_type": "markdown",
+      "source": [
+        "As all the function’s arguments are named, the function description header will look like this (the list of named arguments follows the semicolon):\n\n```\nfunction cost(; length, width, height, price)\n```\n\nRemember that the volume of the ingot (cm$$) is calculated as the product of its length, width and height, whilst its mass (g) is calculated as the product of its volume (cm$$) and its density (g/cm$³ xml-ph-0000@deepl.内部 ³ xml-ph-0001@deepl.内部 ³$). The value is equal to the product of the mass (g) and the price (rubles/g). The resulting cost must be rounded up to the nearest integer (using the `ceil` function) and then converted to an integer type (using the `Int` function) to prevent the result being displayed in exponential form, which is not used for monetary amounts.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4f88777b",
+      "cell_type": "markdown",
+      "source": [
+        "##### <span style=\"background-color: #c2ebff\">解决方案</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 2,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a5aa5f5d",
+      "cell_type": "code",
+      "source": [
+        "function cost(; length, width, height, price)\r\n    V = length * width * height\r\n    m = V * 19.32\r\n    return cost = Int(ceil(m * price))\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c98b3a11",
+      "cell_type": "code",
+      "source": [
+        "cost(length=10, width=3, height=1, price=6200)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "9782b303",
+      "cell_type": "markdown",
+      "source": [
+        "## 数学函数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a949a8ea",
+      "cell_type": "markdown",
+      "source": [
+        "在 **Julia** 中，有大量标准数学函数。下面介绍最常用的一些。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "04656c35",
+      "cell_type": "markdown",
+      "source": [
+        "### 绝对值和根\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a12b631a",
+      "cell_type": "markdown",
+      "source": [
+        "* `abs(x)` 是数 `x` 的绝对值。\n* `abs2(x)` 是数 `x` 的平方。\n* `sqrt(x)` 是 `x` 的平方根。\n* `cbrt(x)` 是 `x` 的立方根。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "640c1ff5",
+      "cell_type": "markdown",
+      "source": [
+        "示例：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d0aaf209",
+      "cell_type": "code",
+      "source": [
+        "abs(-10)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "785fa389",
+      "cell_type": "code",
+      "source": [
+        "abs2(-10)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "428faa87",
+      "cell_type": "code",
+      "source": [
+        "sqrt(1000)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "97bc4b04",
+      "cell_type": "code",
+      "source": [
+        "cbrt(729)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "55edf35d",
+      "cell_type": "markdown",
+      "source": [
+        "### 幂和对数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f9a97dfa",
+      "cell_type": "markdown",
+      "source": [
+        "* `exp(x)` 是 `e` 的 `x` 次幂。\n* `exp2(x)` 是 $2$ 的 `x` 次幂。\n* `exp10(x)` 是 $10$ 的 `x` 次幂。\n* `exponent(x)` 是满足 $2^y ≤ |x|$ 的最大整数 `y`。\n* `log(x)` 是 `x` 的自然对数。\n* `log2(x)` 是以 $2$ 为底的 `x` 的对数。\n* `log10(x)` 是 `x` 的常用对数。\n* `log(n,x)` 是以 `n` 为底的 `x` 的对数。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "efc2c4af",
+      "cell_type": "markdown",
+      "source": [
+        "示例：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "85dad352",
+      "cell_type": "code",
+      "source": [
+        "exp(3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "f7a4484c",
+      "cell_type": "code",
+      "source": [
+        "exp2(10)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4619cac7",
+      "cell_type": "code",
+      "source": [
+        "exp10(6)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1aaf2d5c",
+      "cell_type": "code",
+      "source": [
+        "exponent(17)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "051d1e00",
+      "cell_type": "code",
+      "source": [
+        "log(234)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "eab2bbb4",
+      "cell_type": "code",
+      "source": [
+        "log2(1024)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "7e45f8d5",
+      "cell_type": "code",
+      "source": [
+        "log(3,81)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "d574fb8e",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️任务6\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5118caf4",
+      "cell_type": "markdown",
+      "source": [
+        "使用内置数学函数，计算以下表达式的值：\r\n* $\\sqrt{7396}$，\r\n* $e^5$，\r\n* $\\ln 10$，\r\n* $\\log_2{100}$，\r\n* $\\log_{10}{365}$。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "255e8922",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "9f18456c",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">解决方案</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 5,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "1acd17d0",
+      "cell_type": "code",
+      "source": [
+        "sqrt(7396)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "eb625a55",
+      "cell_type": "code",
+      "source": [
+        "exp(5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "58313c78",
+      "cell_type": "code",
+      "source": [
+        "log(10)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5aa92205",
+      "cell_type": "code",
+      "source": [
+        "log2(100)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "d9ddb2f4",
+      "cell_type": "code",
+      "source": [
+        "log10(365)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b729b9b7",
+      "cell_type": "markdown",
+      "source": [
+        "### 三角函数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "0cfe3d70",
+      "cell_type": "markdown",
+      "source": [
+        "If the argument `x` is given in radians, then \n\n* `sin(x)` is the sine of `x`.\n* `cos(x)` is the cosine of `x`.\n* `tan(x)` is the tangent of `x`.\n* `cot(x)` is the cotangent of `x`.\n* `asin(x)` is the arcsine of `x`.\n* `acos(x)` is the arccosine of `x`.\n* `atan(x)` is the arctangent of `x`.\n* `acot(x)` is the arccotangent of `x`.\n* `sinc(x)` is the cardinal sine of `x`: $`x` \\text{sinc}(x)=\\begin{cases}\\frac{\\sin(\\pi x)}{\\pi x} \\text{ 若 } x \\ne 0 \\\\ 1 \\text{ 若 } x=0 \\end{cases}$\n* `cosc(x)`是`x`的正弦的导数：$\\text{cosc}(x)=\\begin{cases} \\frac{\\cos(\\pi x)}{x} - \\frac{\\sin(\\pi x)}{\\pi x^2} \\text{ if } x \\ne 0 \\\\ 0 \\text{ if } x=0 \\end{cases}$\n\n若要用度（而非弧度）计算三角函数，请在函数名后添加后缀`d`：`sind(x)`、`cosd(x)`、`tand(x)`、`cotd(x)`、`asind(x)`、`acosd(x)`、`atand(x)`、`acotd(x)`。\n\n* `rad2deg(x)` – 将角度`x`从弧度转换为度。\n* `deg2rad(x)` – 将角度从度转换为弧度。\n\n示例：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "b9a9b1ef",
+      "cell_type": "code",
+      "source": [
+        "sin(2.31)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "17949894",
+      "cell_type": "code",
+      "source": [
+        "cos(pi)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "09848321",
+      "cell_type": "code",
+      "source": [
+        "tan(pi/4)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "059b28a5",
+      "cell_type": "code",
+      "source": [
+        "atan(1)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "7f150663",
+      "cell_type": "code",
+      "source": [
+        "sinc(0.5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1a22c5b6",
+      "cell_type": "code",
+      "source": [
+        "rad2deg(atan(1))"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "799616d4",
+      "cell_type": "code",
+      "source": [
+        "deg2rad(180)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1bef17e7",
+      "cell_type": "markdown",
+      "source": [
+        "###  ✏️任务7\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a8d7cecb",
+      "cell_type": "markdown",
+      "source": [
+        "使用内置数学函数，计算以下表达式的值：\n* $\\sin{\\pi/12}$, \n* $\\cos{30\\pi}$, \n* $\\text{tg} 89^\\circ$, \n* $\\text{arcsin}0.5$.\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "2204db71",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "56de0168",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">提示</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 6,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "836d06c3",
+      "cell_type": "markdown",
+      "source": [
+        "要计算以度为单位的自变量的正切值，请使用`tand`函数。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d17e8c1a",
+      "cell_type": "markdown",
+      "source": [
+        "##### <span style=\"background-color: #c2ebff\">解法</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 4,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "ec9cd94e",
+      "cell_type": "code",
+      "source": [
+        "sin(pi/12)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "dacb2f02",
+      "cell_type": "code",
+      "source": [
+        "cos(30*pi)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "cb42583c",
+      "cell_type": "code",
+      "source": [
+        "tand(89)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "58d5b126",
+      "cell_type": "code",
+      "source": [
+        "asin(0.5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "d181af55",
+      "cell_type": "markdown",
+      "source": [
+        "### 双曲函数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "eb54a0ac",
+      "cell_type": "markdown",
+      "source": [
+        "* `sinh(x)`是`x`的双曲正弦。\n* `cosh(x)`是`x`的双曲余弦。\n* `tanh(x)`是`x`的双曲正切。\n* `coth(x)`是`x`的双曲余切。\n\n相应的反双曲函数为：`asinh(x)`，`asoch(x)`，`atanh(x)`，`acoth(x)`。\n\n示例：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "8d98e723",
+      "cell_type": "code",
+      "source": [
+        "sinh(2)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5174ba39",
+      "cell_type": "code",
+      "source": [
+        "cosh(0)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "8dc7beb4",
+      "cell_type": "code",
+      "source": [
+        "tanh(1)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "9176344a",
+      "cell_type": "markdown",
+      "source": [
+        "###  组合函数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6ac83638",
+      "cell_type": "markdown",
+      "source": [
+        "* `factorial(x)`是`x`的阶乘。\n* `binomial(x,y)`是从`b`中选取`a`的组合数（二项式系数）。\n\n示例：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "639fa73c",
+      "cell_type": "code",
+      "source": [
+        "factorial(10)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2b3b03f1",
+      "cell_type": "code",
+      "source": [
+        "binomial(6,4)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5c4cb7d3",
+      "cell_type": "markdown",
+      "source": [
+        "### 舍入函数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "ef87cf7e",
+      "cell_type": "markdown",
+      "source": [
+        "* `round(x)` – 将`x`舍入到最接近的整数。\n* `ceil(x)` – 将`x`向上舍入到最接近的整数。\n* `floor(x)` – 将`x`向下舍入到最接近的整数。\n* `trunc(x)` – 将数字`x`的小数部分截断。\n\n示例：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "823f958e",
+      "cell_type": "code",
+      "source": [
+        "round(15.64)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "baf46ce1",
+      "cell_type": "code",
+      "source": [
+        "ceil(15.64)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "cf041db9",
+      "cell_type": "code",
+      "source": [
+        "floor(15.64)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "fb25f814",
+      "cell_type": "code",
+      "source": [
+        "trunc(15.64)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "22b05f84",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️任务8\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a5e47841",
+      "cell_type": "markdown",
+      "source": [
+        "使用内部数学函数，分别运行上述四种插值方法，对数字$3.49$进行四舍五入。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d35339d4",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "54d65464",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">解法</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 4,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "2db0a3b2",
+      "cell_type": "code",
+      "source": [
+        "round(3.49)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "651cb017",
+      "cell_type": "code",
+      "source": [
+        "ceil(3.49)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1d7eb749",
+      "cell_type": "code",
+      "source": [
+        "floor(3.49)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "2abdabcc",
+      "cell_type": "code",
+      "source": [
+        "trunc(3.49)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "75418461",
+      "cell_type": "markdown",
+      "source": [
+        "###\n\n若需将数字四舍五入至`n`个小数位（而非整数），请将`digits=n`作为这四种函数中任意一种的第二个参数。 \n\n例如，让我们将数字`5.83659`四舍五入到小数点后位：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d6f461b8",
+      "cell_type": "code",
+      "source": [
+        "round(5.83659, digits=2)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "074f1ff0",
+      "cell_type": "markdown",
+      "source": [
+        "### 除法函数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "faf0fae8",
+      "cell_type": "markdown",
+      "source": [
+        "* `div(x,y)`是截断除法。商被四舍五入为“0”。\n* `fld(x,y)`是截断除法。商被舍入“为零”。\n* `cld(x,y)`是向下舍入的整数除法。商被舍入至负无穷大。\n* 是向上舍入的整数除法。商被舍入至正无穷大。\n* `rem(x,y)`是`x`除以`y`的整数除法余数；满足条件`x == div(x,y)*y + rem(x,y)`。其符号对应于`x`。\n* `mod(x,y)`是`x`除以`y`的整数除法余数；满足条件`x == fld(x,y)*y + mod(x,y)`。其符号对应于`y`。\n\n示例：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "05652ad0",
+      "cell_type": "code",
+      "source": [
+        "div(20,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "35d61094",
+      "cell_type": "code",
+      "source": [
+        "fld(-20,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "45edbf08",
+      "cell_type": "code",
+      "source": [
+        "cld(20,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5b75335a",
+      "cell_type": "code",
+      "source": [
+        "rem(20,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "af60303d",
+      "cell_type": "code",
+      "source": [
+        "mod(-20,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "9c692c54",
+      "cell_type": "markdown",
+      "source": [
+        "###  其他有用函数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "3410d384",
+      "cell_type": "markdown",
+      "source": [
+        "* `gcd(x,y)`是`x`和`y`的最大公因数。\n* `lcm(x,y)`是`x`和`y`的最小公倍数。\n* `min(x,y)`是列表中的最低值。\n* `max(x,y)`是列表中的最大值。\n* `minmax(x,y)`表示两个数字`x`和`y`的最低值和最大值；结果以元组形式返回。\n* `real(x)`表示数字`x`的实数部分。\n* `imag(x)`表示数字`x`的虚数部分。\n* `reim(x)`返回`x`的实数和虚数（以元组形式）。\n* `conj(x)`是`x`的共轭复数。\n* `sign(x)`是`x`的符号；返回$-1$、$0$或$+1$。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f84073da",
+      "cell_type": "markdown",
+      "source": [
+        "示例：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4356e574",
+      "cell_type": "code",
+      "source": [
+        "gcd(24,32)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ef9ba3c5",
+      "cell_type": "code",
+      "source": [
+        "lcm(24,32)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "54715071",
+      "cell_type": "code",
+      "source": [
+        "min(24, 33, 51, 22)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "3e3235e7",
+      "cell_type": "code",
+      "source": [
+        "reim(2+3im)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "e346b47b",
+      "cell_type": "code",
+      "source": [
+        "conj(2+3im)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "57e83d01",
+      "cell_type": "code",
+      "source": [
+        "sign(-5)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5d79690e",
+      "cell_type": "markdown",
+      "source": [
+        "###  ✏️任务9\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "99d5252e",
+      "cell_type": "markdown",
+      "source": [
+        "使用内置数学函数，计算：\n* 整数$100$除以$6$的商，\n* 整数$100$除以$6$的余数，\n* $64$和$48$的最大公约数，\n* $64$与$48$的最小公倍数，\n* 复数$4-6i$的实数和虚数。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "39cca258",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c1e37ad0",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">解法</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 5,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "e1bac0df",
+      "cell_type": "code",
+      "source": [
+        "div(100,6)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "5c6fda63",
+      "cell_type": "code",
+      "source": [
+        "rem(100,6)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "8ecc4ec4",
+      "cell_type": "code",
+      "source": [
+        "gcd(64,48)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "9c81a699",
+      "cell_type": "code",
+      "source": [
+        "lcm(64,48)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "d2c685e4",
+      "cell_type": "code",
+      "source": [
+        "reim(4-6im)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ad819433",
+      "cell_type": "markdown",
+      "source": [
+        "### 特殊函数\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "cd7616b4",
+      "cell_type": "markdown",
+      "source": [
+        "[SpecialFunctions.jl](https://specialfunctions.juliamath.org/stable/) 包包含大量其他特殊的数学函数。其中包括伽玛函数、贝塔函数、积分正弦、积分余弦、误差函数、欧拉函数、贝塞尔函数、椭圆积分、黎曼ζ函数和其他函数。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "e9400fa6",
+      "cell_type": "markdown",
+      "source": [
+        "## 变量范围\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "b6161230",
+      "cell_type": "markdown",
+      "source": [
+        "我们将**代码块**定义为包含在语法结构`function`或`let …​ end`之内的代码片段。在此类代码块中，您可以声明仅在该代码块内可见的局部变量，这些变量不会与代码其他部分的变量（例如全局变量）发生冲突。\n**作用域**决定了您可以在代码中的哪些位置使用一个变量。因此，变量可以是局部变量，也可以是全局变量。\n\n>**局部（内部）变量**是在其父元素（如函数、对象、代码块等）内部声明和定义的变量。局部变量仅在其定义的范围内可见，在该范围之外无法访问。\n\n示例：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "144c6e4c",
+      "cell_type": "code",
+      "source": [
+        "function func()\r\n    local_var = 10\r\n    println(local_var)\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "e7c55312",
+      "cell_type": "markdown",
+      "source": [
+        "在此，`function func()`定义了一个名为`func`的函数，其局部范围内包含局部变量`local_var`。\n\n使用命令`func()`调用该函数将输出变量`local_var`的值，即$10$：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "82c86ccb",
+      "cell_type": "code",
+      "source": [
+        "func()"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "0aad6d91",
+      "cell_type": "markdown",
+      "source": [
+        "函数执行完毕后，局部变量`local_var`便超出了范围，在函数外部无法访问。这意味着该变量仅存在于其被定义的代码块内。\n\n让我们尝试使用以下代码在局部范围之外访问变量`local_var`：\n\n```\nprintln(local_var)\n\nUndefVarError: `local_var` not defined\n```\n\n我们可以看到，外部代码无法访问该局部变量，并返回一条错误信息，指出局部变量`local_var`未定义。\n\n>**全局（外部）变量**是指在具有局部范围的函数和代码块之外定义的变量。全局变量可在代码的任何部分访问，且位于全局范围中。\n\n示例：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5587a011",
+      "cell_type": "code",
+      "source": [
+        "global_var = 20\r\nfunction func()\r\n    println(global_var)\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "07ceb5c1",
+      "cell_type": "markdown",
+      "source": [
+        "这段代码声明了全局变量`global_var`，并定义了函数`func()`，该函数用于输出全局变量的值。使用`func()`命令调用该函数时，将输出全局变量`global_var`的值，即$20$：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "5720e436",
+      "cell_type": "code",
+      "source": [
+        "func()"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "59236c90",
+      "cell_type": "markdown",
+      "source": [
+        "全局变量`global_var`可在函数外部使用：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "0f15b0e9",
+      "cell_type": "code",
+      "source": [
+        "println(global_var)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "ed336d61",
+      "cell_type": "markdown",
+      "source": [
+        ">**变量遮蔽（**）是指在特定范围内（例如函数或代码块中），使用了一个与全局范围中变量同名的变量。结果，该范围内的变量会遮蔽（覆盖）外层范围中同名的变量。\n\n定义同名变量时请务必谨慎——由于变量遮蔽，范围内的变量可能与程序其他部分的同名变量具有不同的值或类型。\n\n例如，让我们看一段代码，其中定义了两个同名但值不同的变量：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "f755ef2e",
+      "cell_type": "code",
+      "source": [
+        "x = 10  # creating a global variable\r\n\r\nfunction func()\r\n    x = 20  # creating a local variable (within a function) with the same name as a global variable\r\n    println(x)  # a local variable will be used within the function\r\nend\r\n\r\nfunc()  # function call\r\nprintln(x)  # the global variable was not modified within the function, so its value is printed"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "3c11d560",
+      "cell_type": "markdown",
+      "source": [
+        "在函数内部创建了一个与全局变量同名（`x`）的局部变量。这不会改变全局变量，而是创建了一个仅在函数内部可见的新局部变量。因此，两者变量的值将分别被打印出来：`20` （全局）和`10` （局部）。因此，在不同的范围中声明变量有助于避免因同名变量被覆盖而产生的问题。\n\n> 变量的范围可以通过以下两个关键字之一显式指定：`global`或`local`。\n\n例如，让我们定义一个函数`func`，其中置位了变量`x`的值。为了使该变量在函数外部可用，我们通过在变量名前添加关键字`global`将其设为全局变量。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "ead0c233",
+      "cell_type": "code",
+      "source": [
+        "function func()\r\n    global x = 30\r\nend  "
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1a934de9",
+      "cell_type": "markdown",
+      "source": [
+        "调用函数`func()`将输出该变量的值，即$30$。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "c2cde142",
+      "cell_type": "code",
+      "source": [
+        "func()  "
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "cff94fb5",
+      "cell_type": "markdown",
+      "source": [
+        "变量`x`被定义为全局变量，因此可以在函数外部访问它：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "44d4832f",
+      "cell_type": "code",
+      "source": [
+        "println(x)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "db3386f4",
+      "cell_type": "markdown",
+      "source": [
+        "### ✏️任务10\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "a9c79b56",
+      "cell_type": "markdown",
+      "source": [
+        "编写一个函数`func`，该函数接受两个参数：`a`和`b`。在函数体内，声明一个变量`x`，其值等于`a`和`b`的和。然后调用函数`func`，传入参数`2`和`3`，并将变量`x`输出到屏幕上。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "83ba190e",
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "fcc62caf",
+      "cell_type": "markdown",
+      "source": [
+        "#### <span style=\"background-color: #c2ebff\">提示</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 5,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "dd9903bf",
+      "cell_type": "markdown",
+      "source": [
+        "由于变量`x`必须在`func`函数内部可见，因此`x`必须声明为全局变量（`global x`）。\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "d76c6e39",
+      "cell_type": "markdown",
+      "source": [
+        "##### <span style=\"background-color: #c2ebff\">解决方案</span>\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": true,
+          "isClosedParagraph": true,
+          "amountHideCellsInside": 3,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "4075795d",
+      "cell_type": "code",
+      "source": [
+        "function func(a,b)\r\n    global x = a + b\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1ded7199",
+      "cell_type": "code",
+      "source": [
+        "func(2,3)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c7da537d",
+      "cell_type": "code",
+      "source": [
+        "println(x)"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": false,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "519659b0",
+      "cell_type": "markdown",
+      "source": [
+        "###\n`let`语句创建了一个具有严格范围的**代码块**。这意味着，如果局部变量`y`尚未存在，且赋值操作发生在形成严格范围的结构内（即在由`let`和`end`语句界定的代码块内），则会在赋值的作用域内创建一个名为`y`的新局部变量。\n\n让我们来看一个例子：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "6fd2386c",
+      "cell_type": "code",
+      "source": [
+        "let y = 1\r\n    let y = 2\r\n    end\r\n    y\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    },
+    {
+      "id": "de662a5a",
+      "cell_type": "markdown",
+      "source": [
+        "在此，在外层`let`代码块中，创建了一个名为`y`的局部变量，其值为`1`。在嵌套（内层）的`let`代码块中，创建了一个独立的局部变量`y`，其值为`2`。从外层代码块调用变量`y`时，将输出该代码块中为其赋的值，即`1`。如果你尝试在外层`let`代码块之外访问变量`y`，将会引发错误，因为变量`y`是局部变量。\n\n你可以使用不带参数的`let`语句，仅用于引入一个新的范围，而不会立即创建任何新的绑定。\n\n以下代码与前面的代码完全等价：\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "1ece450e",
+      "cell_type": "code",
+      "source": [
+        "let\r\n    local y = 1\r\n    let\r\n        local y = 2\r\n    end\r\n    y\r\nend"
+      ],
+      "execution_count": 0,
+      "outputs": [],
+      "metadata": {
+        "name": "Section title",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false,
+          "outputInfo": {
+            "isExpanded": false,
+            "scrollTop": 0
+          },
+          "maskInfo": {
+            "isMaskVisible": true,
+            "isEditorVisible": true,
+            "isAutoplayActive": false
+          }
+        }
+      }
+    }
+  ]
+}
