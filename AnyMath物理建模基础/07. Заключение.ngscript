@@ -1,0 +1,95 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "IJulia 1.9.3",
+      "language": "julia",
+      "name": "ijulia-1.9"
+    },
+    "language_info": {
+      "file_extension": ".jl",
+      "name": "julia",
+      "version": "1.9.3"
+    },
+    "engee": {}
+  },
+  "cells": [
+    {
+      "id": "1bbddb01",
+      "cell_type": "markdown",
+      "source": [
+        "# 结论\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "56cb9082",
+      "cell_type": "markdown",
+      "source": [
+        "祝贺你！ 您已经完成了Engee物理建模基础课程**。 在本课程中，您将学习如何使用**Engee平台构建物理模型。**\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "aedbf658",
+      "cell_type": "markdown",
+      "source": [
+        "## 反馈意见\n\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": true,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    },
+    {
+      "id": "2af57ffe",
+      "cell_type": "markdown",
+      "source": [
+        "您的课程完成证书将在您回答问卷问题后提供（完成问卷的链接在页面底部给出）。 问卷中只有5个问题，对它们的回答将花费很少的时间。 反馈将帮助我们提高课程的质量。\n\n<br/>\n\n如果您对本课程内容有任何额外的意见或建议，可以写信给[Engee Support***]（https://engee.com/support/tickets )。\n\n<br/>\n\n<p对齐=\"中心\">\n<风格=\"填充：8px16px;\n    边框：3px蓝色;\n    边界半径:15px;\n    颜色：白色;\n    背景颜色：#1b83ba;\n    字体大小:24pt; \n    文字装饰：无；\"href=\"https://my.etude.org/link/W1B8ZozhbyG7_OIpxPe6oCosj1HUsIUJEJbluJIX9w0tiRCO79dqT3PwJATGRk4Yyrr6kBAQ2YYQ6YXAFyMpBRa_lhMpzHYQ-VtGIjUsLSysYwvwgZr3uECk35X342YY22ewdaW2qy2LzJDrytWTo6a6hjR1jRCSKpME_ZHBDP8=?engee=\"\n     target=\"_blank\">回答课程问卷问题>></a>\n</p>\n\n<笔迹><div><img src=\"https://mc.yandex.ru/watch/99325243\"风格=\"位置：绝对；左：-9999px；\"alt=\"/></div></笔迹>\n"
+      ],
+      "attachments": {},
+      "metadata": {
+        "name": "Название секции",
+        "engee": {
+          "isDisplay": true,
+          "isParagraph": false,
+          "isClosedParagraph": false,
+          "amountHideCellsInside": 0,
+          "codeOutputView": "col",
+          "codeOutputHidden": false
+        }
+      }
+    }
+  ]
+}
